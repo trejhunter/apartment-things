@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture Listing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .item {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+      .item img {
+        width: 150px;
+        height: auto;
+        margin-right: 15px;
+      }
+      .item-details {
+        flex-grow: 1;
+      }
+      .total {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      .highlight-price {
+        color: #007bff; /* Bright blue text */
+        font-weight: bold;
+        font-size: 1.2em;
+        background-color: #e6f4ff; /* Light blue background */
+        border-radius: 5px;
+      }
+      .total {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f8f9fa; /* Light gray background */
+        border-top: 1px solid #ddd; /* Border at the top */
+        padding: 10px;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for separation */
+      }
+    </style>
+    <script>
+      function updateTotal() {
+        const checkboxes = document.querySelectorAll('.item-checkbox:checked');
+        let total = 0;
+        checkboxes.forEach((checkbox) => {
+          total += parseFloat(checkbox.dataset.price);
+        });
+        document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Things that gotta go 🫡</h1>
+    <div class="item">
+      <img src="scooter.jpg" alt="Scooter" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Scooter</p>
+        <p><strong>Price I bought it at:</strong> $371</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> $50</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="50"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="rug.jpg" alt="Rug" />
+      <div class="item-details">
+        <p><strong>Item:</strong> 8' x 11' Rug</p>
+        <p><strong>Price I bought it at:</strong> $201.09</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> FREE</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="0"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="sofa.jpg" alt="Sofa" />
+      <div class="item-details">
+        <p><strong>Item:</strong> U-Shape Sectional Sofa Sleeper w/ storage</p>
+        <p><strong>Price I bought it at:</strong> $1,204.85</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> $500</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="500"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="tv.jpg" alt="TV" />
+      <div class="item-details">
+        <p><strong>Item:</strong> 55-Inch 4K UHD Smart TV</p>
+        <p><strong>Price I bought it at:</strong> $671.73</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> $400</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="400"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="tv stand.jpg" alt="TV Stand" />
+      <div class="item-details">
+        <p><strong>Item:</strong> TV STAND</p>
+        <p><strong>Price I bought it at:</strong> $170.59</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> FREE</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="0"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="soundbar.jpg" alt="Sound bar" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Samsung Soundbar with Dolby Audio</p>
+        <p><strong>Price I bought it at:</strong> $157.79</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> $50</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="50"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="dresser.jpg" alt="Dresser" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Bedroom dresser</p>
+        <p><strong>Price I bought it at:</strong> $528.80</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> $150</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="150"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="bookcase.jpg" alt="Book Case" />
+      <div class="item-details">
+        <p><strong>Item:</strong> 8 cube bookcase</p>
+        <p><strong>Price I bought it at:</strong> $80</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> FREE</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="0"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="desk.jpg" alt="Standing Desk" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Standing Desk</p>
+        <p><strong>Price I bought it at:</strong> $283.99</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> FREE</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="0"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="bar stool.jpg" alt="Bar stools" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Bar Stools (x2)</p>
+        <p><strong>Price I bought it at:</strong> $140</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> FREE</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="0"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="nightstand.jpg" alt="Night stands" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Night Stands (w/ USB Ports) (x2)</p>
+        <p><strong>Price I bought it at:</strong> $185.50</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> FREE</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="0"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="lamp.jpg" alt="Lamp" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Random lamp</p>
+        <p>
+          <strong>Price I bought it at:</strong> Stole it from home when I moved
+        </p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> FREE</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="0"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="vacuum.jpg" alt="Vacuum" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Vacuum</p>
+        <p><strong>Price I bought it at:</strong> Can't find it</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> FREE</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="0"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <div class="item">
+      <img src="art.jpg" alt="Black Mona Lisa" />
+      <div class="item-details">
+        <p><strong>Item:</strong> Black Mona Lisa</p>
+        <p><strong>Price I bought it at:</strong> Made by me :)</p>
+        <span class="highlight-price"
+          ><p><strong>Cage Price:</strong> $1,000,000</p></span
+        >
+        <label>
+          <input
+            type="checkbox"
+            class="item-checkbox"
+            data-price="1000000"
+            onchange="updateTotal()"
+          />
+          Select
+        </label>
+      </div>
+    </div>
+    <p class="total">Total: <span id="total">$0.00</span></p>
+  </body>
+</html>
